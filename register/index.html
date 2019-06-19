@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html class="no-js" lang="">
+<head>
+<meta charset="utf-8">
+<title>NIMDA SECURITY</title>
+
+<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,400italic,300italic,300,200italic,600,600italic,700,700italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="../css/main.css">
+<link rel="stylesheet" href="../css/nomal.css">
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="../js/modernizr.min.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script src="../js/plugins.js"></script>
+<script src="../js/main.js"></script>
+<script src="../js/jquery.color-2.1.0.min.js"></script>
+<!-- <script src="./js/scripts.js"></script> -->
+<script>
+	$(document).ready(function(){
+		$(function(){
+			$(".login-form").submit(function(event){
+				event.preventDefault();
+				$.ajax({
+					url: "register.php",
+					type: "post",
+					data: $(".login-form").serialize(),
+					success : function(json){
+						var content = ($.trim(json));
+						if(content == "join now"){
+							$(".passwd-msg").text("The account has already been subscribed.");
+						}
+						if(content == "join success"){
+							$(".passwd-msg").text("Sign-up Succeeded!");
+							$(location).attr('href', "http://nimda.party");
+						}
+						if(content == "no nimda"){
+							$(".passwd-msg").text("You are not a member of the club!");
+						}
+						if(content == "join fail"){
+							$(".passwd-msg").text("Failed to join Call admin plz.");
+						}
+						if(content == "len pw"){
+							$(".passwd-msg").text("Password length is short.");
+						}
+					}
+				});
+			});
+		});
+	});
+	
+	function gotoLogin(){
+		$.ajax({
+			type : "GET",
+			url : "http://nimda.party/index.html",
+			dataType : "text",
+			error : function() {
+		        alert('통신실패!!');
+	        },
+			success : function(data) {
+	        	$(document).html(data);
+ 	        }
+		});
+	}
+
+
+
+
+
+</script>
+
+<body data-switchingpage="false">
+<!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+		<!--<pre id="nimdaintrowindow" hidden >>&raquo; NIMDA OS v0.05 Loading ... </pre> -->
+
+<form class="login-form" method="POST"> 
+                <p class="passwd-msg" id="p-msg"></p>
+				<input type= "text" placeholder="ID" class="passid" name="uid"></input></br>
+                <input type="password" placeholder="Password" class="passwd" name="upw"></input>
+                <input type="submit" class="passwd-btn" ></input>
+        </form>
+</html>

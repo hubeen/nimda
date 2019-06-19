@@ -1,0 +1,120 @@
+@font-face {
+  font-family: Ubuntu;
+  src: url(../fonts/Ubuntu-R.ttf); }
+
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  background: -webkit-linear-gradient(320deg, #501a29, #9f514c, #63183d) no-repeat;
+  background: linear-gradient(130deg, #501a29, #9f514c, #63183d) no-repeat;
+  font: 16px Ubuntu, sans-serif; }
+
+.login-form {
+  display: inline-block;
+  border: 1px #4c2d30 solid;
+  border-radius: 0.5rem;
+  background: rgba(69, 29, 36, 0.9);
+  padding: 0.5rem 0.625rem;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  left: 6%; }
+
+.users-list {
+  margin: 0;
+  padding: 0;
+  position: absolute; }
+
+.users-list-item {
+  list-style: none; }
+
+.user-btn {
+  display: none; }
+  .user-btn:checked + .user-label {
+    top: 0; }
+
+.user-label {
+  position: absolute;
+  padding: 0.3125rem 0;
+  white-space: nowrap;
+  -webkit-transition: 0.3s;
+  transition: 0.3s; }
+
+.user-label-0 {
+  top: 0;
+  color: white; }
+
+.user-label-below-1 {
+  top: 7.0625rem; }
+
+.user-label-above-1 {
+  top: -2.8125rem; }
+
+.user-label-below-1, .user-label-above-1 {
+  color: rgba(255, 255, 255, 0.7); }
+
+.user-label-below-2 {
+  top: 9.25rem; }
+
+.user-label-above-2 {
+  top: -5rem; }
+
+.user-label-below-2, .user-label-above-2 {
+  color: rgba(255, 255, 255, 0.49); }
+
+.user-label-below-3 {
+  top: 11.4375rem; }
+
+.user-label-above-3 {
+  top: -7.1875rem; }
+
+.user-label-below-3, .user-label-above-3 {
+  color: rgba(255, 255, 255, 0.343); }
+
+.user-label-below-4 {
+  top: 13.625rem; }
+
+.user-label-above-4 {
+  top: -9.375rem; }
+
+.user-label-below-4, .user-label-above-4 {
+  color: rgba(255, 255, 255, 0.2401); }
+
+.passwd-msg {
+  visibility: hidden;
+  margin: 0;
+  padding: 2.0625rem 0 0.6875rem;
+  color: red;
+  font: 0.875em Ubuntu, sans-serif; }
+
+.passwd {
+  color: white;
+  font: 1em Ubuntu, sans-serif;
+  padding: 0.3125rem;
+  width: 17.1875rem;
+  background: rgba(50, 21, 25, 0.9);
+  border: 1px white solid;
+  border-radius: 0.25rem; }
+
+.passwd-btn {
+  display: none; }
+
+
+
+#nimdaintrowindow {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    color: #32CD32;
+    padding: 15px 15px;
+    font-family: monospace;
+    z-index: 999999999;
+    font-size: 14px;
+    margin: 0px 0px;
+    word-wrap: break-word;
+}
